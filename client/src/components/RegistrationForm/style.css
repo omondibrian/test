@@ -1,0 +1,36 @@
+ .login{
+    margin-top: 100px;
+}
+.login .card{
+    background: rgba(0,0,0,0.6 )
+}
+ body .background  {
+    background-image: url(../../assets/egerton.jpg);
+    background-size: cover;
+    height:950px;
+    width: 100%;
+   
+}
+.background html{
+    padding:0;
+    margin:0;
+}
+.row{
+    margin-top: 0px;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.login label {
+    font-size:16px;
+    color:#ccc;
+}
+.login input{
+   font-size: 22px;
+   color:#fff; 
+}
+
+.login button:hover{
+    padding: 0px 40px;
+}

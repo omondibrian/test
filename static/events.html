@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Egerton university computer science students association">
+    <meta name="author" content="Owidi,Kevin,Omondi">
+
+    <title>projects</title>
+
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Rokkitt|Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+    <!-- Custom styles for this template -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
+
+
+
+</head>
+
+<body id="page-top">
+    <header class="container-grid header" id="projects">
+        <div class="container-grid extended-nav-component">
+
+            <nav class="container-grid nav-extended nav-fixed">
+                <div class="container nav-wrapper">
+                    <a class=" brand-logo nav-logo" href="index.html">eucossa</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li class="list-item-container">
+                            <a class="link-text" href="index.html">home</a>
+                        </li>
+                        <li class="list-item-container">
+                            <a class="link-text" href="blog.html">blog</a>
+                        </li>
+                        <li class="list-item-container">
+                            <a class="link-text" href="about.html">about</a>
+                        </li>
+                        <li class="list-item-container">
+                            <a class="link-text" href="executive.html">Team</a>
+                        </li>
+                        <li class="list-item-container">
+                            <a class="link-text" href="./events.html">Events</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li class="list-item-container">
+                    <a class="link-text" href="index.html">home</a>
+                </li>
+                <li class="list-item-container">
+                    <a class="link-text" href="blog.html">blog</a>
+                </li>
+                <li class="list-item-container">
+                    <a class="link-text" href="about.html">about</a>
+                </li>
+                <li class="list-item-container">
+                    <a class="link-text" href="executive.html">Team</a>
+                </li>
+                <li class="list-item-container">
+                    <a class="link-text" href="./events.html">Events</a>
+                </li>
+                <!-- <li class="list-item-container">
+                    <a class="link-text" href="#">Join</a>
+                </li> -->
+            </ul>
+
+            <!-- showcase -->
+            <div id="showcase" class="container-fluid">
+                <div class="text-caption container">
+                    <div class="text-header">
+                        <h1>Checkout for the latest Events</h1>
+                        <h5> be updated</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- article -->
+    <article class="blog-article">
+        <div class="container-grid section white">
+            <div class="container-grid row">
+                <div class="container-grid col s12 m10 offset-m1 caption">
+                    <h1 class="heading-1"> Upcaming Events</h1>
+                    <p class="paragraph paragraph-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatciendis illum soluta laborum? Odio eos placeat non, obcaecati magni dolor voluptatibus?.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <ul class="collection" id="events"></ul>
+    </section>
+
+
+
+    <!-- Footer -->
+
+
+    <footer class=" #bdbdbd grey lighten-1">
+
+        <div class="footer-copyright ">
+            <div class="container">
+                <small class="copyright s12">Copyright &copy; <a
+                        href="gmail.com/kevinalex846@gmail.com">kevinalex846@gmai.com </a> Egerton
+                    2019</small>
+
+                <div class="inline-items s12 right">
+                    <small class="copyright"><a href="#">Privacy Policy</a></small>
+
+                </div>
+                <div class="inline-items s12 right">
+                    <small class="copyright"><a href="#">Terms & conditions</a></small>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- online cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- local materialize -->
+    <script src="./js/materialize.js"></script>
+    <script src="./js/materialize.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./js/script.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        M.AutoInit();
+        $(document).ready(function () {
+                $('.materialboxed').materialbox();
+            });
+    </script>
+    <script>
+  
+        fetchEvents();
+        
+    </script>
+</body>
+
+</html>
