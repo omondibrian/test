@@ -2,16 +2,16 @@
     margin-top: 100px;
 }
 .login .card{
-    background: rgba(0,0,0,0.6 )
+    background:rgb(212, 208, 208)
 }
- body .background  {
-    background-image: url(../../assets/egerton.jpg);
+.body {
+    background-color:grey;
     background-size: cover;
     height:950px;
     width: 100%;
    
 }
-.background html{
+.body  html{
     padding:0;
     margin:0;
 }
@@ -24,7 +24,7 @@
 }
 .login label {
     font-size:16px;
-    color:#ccc;
+    color:rgb(27, 26, 26);
 }
 .login input{
    font-size: 22px;

@@ -4,11 +4,16 @@ import M from 'materialize-css/dist/js/materialize';
 import {NavLink} from 'react-router-dom'
 import  Axios from 'axios';
 import SinglePost from '../../components/editPosts';
+import { fetchjwt } from '../../util functions/fetchdata';
 
 function Posts() {
     const [state,setState] = useState({})
     const [trigger,setTrigger] = useState(false)
      useEffect(  ()=>{
+             const jwt = fetchjwt()
+        if(!jwt){
+            this. props.history.push('/login')
+        } 
              let elems = document.querySelectorAll('.collapsible');
             M.Collapsible.init(elems,{});
       

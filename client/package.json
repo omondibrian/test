@@ -2,8 +2,8 @@
   "name": "eucossa",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:3500",
-  "homepage":"./eucossa",
+  "proxy":"http://localhost:3600",
+  "homepage": "http://localhost:3600/eucossa",
   "dependencies": {
     "axios": "^0.19.0",
     "chart.js": "^2.8.0",

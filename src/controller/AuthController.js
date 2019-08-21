@@ -70,21 +70,21 @@ try {
 
     //validate the user input
     const { error } = loginValidation(req.body);
-    if (error) return res.send(error.details[0].message);
+    if (error) return res.status(422).send({error:error.details[0].message});
 
 
     //check if the email doesn't exists
     const user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).send("Error authenticating please try again");
+    if (!user) return res.status(400).send({error:"Error authenticating please try again"});
 
     //check if password is correct
     const validPass = await bcrpt.compare(req.body.password, user.password);
-    if (!validPass) return res.status(422).send('Error authenticating please try again');
+    if (!validPass) return res.status(422).send({error:'Error authenticating please try again'});
 
     //check if account is active
     if (!user.active) return res.status(400).json({ message: 'Please activate your account first' });
     //create and assing an authentification token
-    const token = jwt.sign({ _id: user._id }, process.env.SECREATE_TOKEN)
+    const token = jwt.sign({ _id: user._id }, process.env.SECREATE_TOKEN,{expiresIn:3600})
     res.header('AUTH_TOKEN', token).send(token ).status(200)
 
     

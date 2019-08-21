@@ -21,7 +21,7 @@ dotenv.config();
 
 //conect mongoDb
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.CONNECTION_STRING2, { useNewUrlParser: true });
+mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true });
 
 mongoose.connection.once('open', function () {
     console.log('connection made sucessfull');
@@ -31,11 +31,14 @@ mongoose.connection.once('open', function () {
 })
 //middlewares
 // Serve static files from the React app
-if(process.env.NODE_ENV==='production'){
-    app.use('/public', express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'build')));
+if(process.env.NODE_ENV === 'production'){
+    app.get('/',(req,res)=>{
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+    })
    app.use('/eucossa',ReactRoutes)
 }
-app.use(express.static(path.join(__dirname, 'static')));
+// app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/uploads', express.static('uploads'))
 app.use(express.json());
@@ -48,8 +51,17 @@ app.use((req,res,next)=>{
     }
         next()
 })
+
+
+//route middleware
+app.use('/api/user',AuthRoutes);
+app.use('/api/posts',PostRoutes);
+app.use('/api/modules', ModuleRoutes);
+app.use('/api/events', eventsRoutes);
+app.use('/api/moduleRegistration', moduleRegistrationRoutes);
+// app.use('/eucossa', ReactRoutes)
 app.get('/',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'static','index.html'))
+    res.sendFile(path.resolve(__dirname,'build', 'index.html'))
 })
 app.get('/blog',(req,res,next)=>{
     res.sendFile(path.join(__dirname,'static','blog.html'))
@@ -65,17 +77,8 @@ app.get('/events',(req,res,next)=>{
 })
 
 
-//route middleware
-app.use('/api/user',AuthRoutes);
-app.use('/api/posts',PostRoutes);
-app.use('/api/modules', ModuleRoutes);
-app.use('/api/events', eventsRoutes);
-app.use('/api/moduleRegistration', moduleRegistrationRoutes);
-app.use('/eucossa', ReactRoutes)
 
-
-
-const PORT = process.env.PORT || 3700
+const PORT = process.env.PORT || 3600
 app.listen(PORT,()=>{
     console.log('server up and running')
 });

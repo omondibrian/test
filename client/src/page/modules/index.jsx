@@ -1,37 +1,33 @@
 import React, { useEffect,useState } from 'react';
 import Navbar from '../../components/navbar';
-import Doughnutgraph from '../../components/donutgraph';
+
 import './style.css'
 import ShowModules from '../../components/showModule';
 import ModulesForm from '../../components/ModulesForm';
-import Piechart from '../../components/pieChart';
 
-import {
-    fetchRegisteredModules,
-     
-     fetchLineGraphDataForModuleRegistration,
-     FetchDoughnutDataForFeesPaid    }from '../../util functions/fetchdata';
+
 import Axios from 'axios';
+import { fetchjwt } from '../../util functions/fetchdata';
 
 
 
 const Modules  = (props) => {
     const [modules,setModules] = useState({})
     const [fetchdata,setFetchData] = useState(false);
-    const [registeredModules,setRegisteredModules] = useState({});
-    const [ donutgraph,setDoughnut] = useState({});
+
 
 
         
 
 useEffect(()=>{
+        const jwt = fetchjwt()
+        if(!jwt){
+            this. props.history.push('/login')
+        } 
      Axios.get('/api/modules').then((res)=>{
                 console.log(res.data.modules)
                setModules(res.data.modules)
             })
-   
-     setDoughnut( FetchDoughnutDataForFeesPaid());
-     setRegisteredModules(fetchRegisteredModules());
      console.log('module rerenders')
 },[fetchdata])
 console.log(modules)

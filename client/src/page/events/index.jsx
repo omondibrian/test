@@ -4,10 +4,15 @@ import EventsCard from '../../components/eventsCard';
 import M from 'materialize-css/dist/js/materialize';
 import {NavLink} from 'react-router-dom'
 import Axios from 'axios';
+import { fetchjwt } from '../../util functions/fetchdata';
 function Events() {
     const [state,setState] = useState({})
     const [trigger,setTrigger] = useState(false)
     useEffect(()=>{
+            const jwt = fetchjwt()
+        if(!jwt){
+            this. props.history.push('/login')
+        } 
          const elems = document.querySelectorAll('.fixed-action-btn');
           M.FloatingActionButton.init(elems,{})
            Axios.get('/api/events')
