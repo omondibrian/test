@@ -6,7 +6,7 @@
   "homepage": "http://localhost:3600/eucossa",
   "dependencies": {
     "axios": "^0.19.0",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.8.6",
     "react-chartjs-2": "^2.7.6",
